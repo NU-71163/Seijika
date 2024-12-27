@@ -14,25 +14,26 @@ public class Quizs : MonoBehaviour
     private TextAsset csvFile;  // CSVファイル
     private List<string[]> csvData = new List<string[]>();  // CSVファイルの中身を入れるリスト
     int index; //問題番号
-    int correct; //正解数
+    public int correct; //正解数
     bool AnswerFlag;    //解答判定
-    float timelimit = 5f; //制限時間
+    float timelimit = 10f; //制限時間
     float nowtimer = 0f;   //経過時間
     public Text ProblemLog;  //問題文
     public Text ProblemNum;  //問題番号
     public Text[] ChoiceLog;    //選択肢文字
-    public Text CorrectNum;   //正解数
     public Text time;    //残り時間表示
     public Button[] ChoiceBtns;   //選択肢
     private List<int> numbers = new List<int> { 1, 2, 3, 4 };   //選択肢番号
     private List<int> Problem = new List<int> { }; //未正解問題
     public Slider TimeSlider;   //残り時間ゲージ
-
+    public resultQuiz animationController1; // スクリプトへの参照
+    public QuizSeikai animationController2;
+    public QuizHuseikai animationController3;
 
     void Start()
     {
         //CSVロード
-        csvFile = Resources.Load("test") as TextAsset;
+        csvFile = Resources.Load("Seijika") as TextAsset;
         StringReader reader = new StringReader(csvFile.text);
         while (reader.Peek() != -1)
         {
@@ -67,7 +68,7 @@ public class Quizs : MonoBehaviour
 
         string LimitLog = TimeLimit.ToString("F0");
         time.text = LimitLog + "秒";
-        time.color = (TimeLimit > 5.5f) ? Color.green : Color.red;// 5.5秒以上は緑、5.5秒未満は赤
+        time.color = (TimeLimit > 5.5f) ? Color.black : Color.red;// 5.5秒以上は緑、5.5秒未満は赤
 
         // タイムオーバー
         if (nowtimer >= timelimit)
@@ -80,7 +81,7 @@ public class Quizs : MonoBehaviour
 
     IEnumerator NextQuestion()
     {
-        yield return new WaitForSeconds(1.5f);  // 1.5秒待つ
+        yield return new WaitForSeconds(1.5f);  // 待つ
 
         ShowNextQuestion();
     }
@@ -105,9 +106,9 @@ public class Quizs : MonoBehaviour
         }
         else if (Problem.Count == index)
         {
-
             Debug.Log("終了!!!!");
-
+            animationController1.PlayAnimation("ResultQuizAnimation");
+            Invoke("LoadSceneResult", 5.0f);
         }
     }
     void Quiz()
@@ -153,7 +154,11 @@ public class Quizs : MonoBehaviour
             if (AnswerFlag == true)//正解
             {
                 correct += 1;   //正解数
-
+                animationController2.PlayAnimation("Seikai");
+            }
+            else if(AnswerFlag == false)
+            {
+                animationController3.PlayAnimation("Huseikai");
             }
             index += 1;//次の問題へ
 
@@ -161,7 +166,6 @@ public class Quizs : MonoBehaviour
             float Rate = correct / (float)index * 100;
             string Ratenum = Rate.ToString("F0");
             string correctNum = correct.ToString();
-            CorrectNum.text = correctNum;
         }
 
         void ResetTimer()
@@ -182,4 +186,9 @@ public class Quizs : MonoBehaviour
                 list[j] = temp;
             }
         }
+
+    void LoadSceneResult()
+    {
+        SceneManager.LoadScene("結果");
+    }
 }
