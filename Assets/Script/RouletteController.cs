@@ -8,7 +8,7 @@ public class RouletteController : MonoBehaviour
     public RectTransform rouletteImage; // ƒ‹[ƒŒƒbƒg‚ÌImage
     public float spinSpeed = 300f;      // ‰ñ“]‘¬“x
     public bool isSpinning = false;    // ‰ñ“]’†‚©‚Ç‚¤‚©
-    private float deceleration = 15f;   // Œ¸‘¬—¦
+    private float deceleration;   // Œ¸‘¬—¦
     private float currentSpeed = 0f;   // Œ»İ‚Ì‰ñ“]‘¬“x
 
     // Start is called before the first frame update
@@ -46,6 +46,7 @@ public class RouletteController : MonoBehaviour
         {
             isSpinning = true;
             currentSpeed = spinSpeed; // ‰Šú‰ñ“]‘¬“xİ’è
+            deceleration = Random.Range(10f, 20f);
         }
     }
 
