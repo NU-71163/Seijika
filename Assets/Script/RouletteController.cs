@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RouletteController : MonoBehaviour
 {
@@ -60,14 +61,17 @@ public class RouletteController : MonoBehaviour
         if (angle >= 0 && angle < 120)
         {
             Debug.Log("Œ‹‰ÊFÔ");
+            SceneManager.LoadScene("ƒ~ƒjƒQ[ƒ€‚P");
         }
         else if (angle >= 120 && angle < 240)
         {
             Debug.Log("Œ‹‰ÊFÂ");
+            SceneManager.LoadScene("ƒ~ƒjƒQ[ƒ€‚Q");
         }
         else
         {
             Debug.Log("Œ‹‰ÊF—Î");
+            SceneManager.LoadScene("ƒ~ƒjƒQ[ƒ€‚R");
         }
     }
 }

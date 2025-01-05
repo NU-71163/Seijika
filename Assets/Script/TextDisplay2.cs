@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TextDisplay2 : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class TextDisplay2 : MonoBehaviour
 
     public bool isAnimationFinished = false; // アニメーション終了フラグ
     public Animator animator; // Animatorコンポーネント
+    public AnimationMove animationController5;
 
     void Start()
     {
@@ -55,6 +57,7 @@ public class TextDisplay2 : MonoBehaviour
                     {
                         if (click == true) //クリックされた判定
                         {
+                            SceneManager.LoadScene("ルーレット");
                             displayText = ""; //表示させる文字列も消す
                             textCharNumber = 0; //文字の番号を最初にする
                             textStop = true; //セリフ表示を止める
@@ -76,6 +79,5 @@ public class TextDisplay2 : MonoBehaviour
     public void OnAnimationEnd()
     {
         isAnimationFinished = true; // アニメーション終了を通知
-        Debug.Log("a");
     }
 }

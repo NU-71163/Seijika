@@ -5,14 +5,14 @@ using UnityEngine.EventSystems;
 
 public class RandomNumberGenerator : MonoBehaviour, IPointerClickHandler
 {
-    public int seijikaNumber;
+    public static int seijikaNumber;
     public AnimationMove animationController5;
     public ImageDisplayManager displayManager;
 
     // クリックされたときに実行される処理
     public void OnPointerClick(PointerEventData eventData)
     {
-        // 1から100までのランダムな数字を生成
+        // 1から5までのランダムな数字を生成
         seijikaNumber = Random.Range(1, 6);
         animationController5.PlayAnimation2("seijikakettei");
         displayManager.ShowImage(this.GetComponent<UnityEngine.UI.Image>());

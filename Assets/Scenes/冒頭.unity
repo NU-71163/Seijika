@@ -254,6 +254,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - "\u30FC\u30FC\u30FC\u767B\u6821\u4E2D\u30FC\u30FC\u30FC"
+  - "\u898B\u3064\u3051\u305F\uFF01\u541B\u3092\u63A2\u3057\u3066\u3044\u305F\u3093\u3060\uFF01"
+  - "..............\u3048\uFF1F"
+  - "\u50D5\u306E\u540D\u524D\u306F\u300E\u53CC\u751F\u5150\u300F\u3002\n\u541B\u306F\u77E5\u3089\u306A\u3044\u3068\u601D\u3046\u3051\u3069\u3001\u541B\u306E\u751F\u304D\u5225\u308C\u306E\u53CC\u5B50\u306E\u5144\u306A\u3093\u3060\uFF01\u6642\u9593\u304C\u7121\u3044\u304B\u3089\u624B\u77ED\u306B\u8A71\u3059\u3088\u3002"
+  - "\u3042\u306E\u3001\u3069\u306A\u305F\u3067\u3059\u304B\uFF1F"
+  - "\u4ECA\u306E\u65E5\u672C\u306B\u4E0D\u6E80\u306F\u7121\u3044\uFF1F"
+  - "\u4E0D\u6E80......\uFF1F"
+  - "103\u4E07\u306E\u58C1\u3001\u6D88\u8CBB\u7A0E\u306E\u9AD8\u3055\u3001\u4F11\u6687\u306E\u5C11\u306A\u3055\u3001\u80B2\u5150\u8CBB\u7528\u306E\u8CA0\u62C5\u306E\u5927\u304D\u3055\u3001\u3001\u3001\u3001"
+  - "\u50D5\u305F\u3061\u304C\u751F\u304D\u5225\u308C\u305F\u7406\u7531\u3082\u3001\u305D\u3046\u3044\u3046\u3068\u3053\u308D\u306B\u3042\u308B\u306E\u304B\u3082\u3057\u308C\u306A\u3044\u3002"
+  - "\u3042\u306E\u3001\u3060\u304B\u3089\u8AB0\u3067\u3059\u304B\uFF1F"
+  - "\u3067\u3082\uFF01"
+  - "\u5B9F\u306F\u305D\u308C\u3089\u3092\u50D5\u305F\u3061\u306E\u884C\u52D5\u3067\u89E3\u6C7A\u3059\u308B\u4E8B\u304C\u51FA\u6765\u308B\u3093\u3060\u3002\u4F55\u304B\u308F\u304B\u308B\uFF1F"
+  - "\u305D\u306E\u524D\u306B\u3001\u3042\u306A\u305F\u8AB0\u3067\u3059\u304B\uFF1F"
+  - "\u305D\u3046\uFF01\u653F\u6CBB\u3060\u3063\uFF01\uFF01\uFF01"
+  - "\u50D5\u305F\u3061\u306E\u610F\u898B\u3067\u65E5\u672C\u306F\u5909\u3048\u3089\u308C\u308B\u3093\u3060\uFF01\n\u4E00\u7DD2\u306B\u53C2\u653F\u3057\u3066\u73FE\u72B6\u3092\u5909\u3048\u3088\u3046\uFF01"
+  - "\u4ECA\u3053\u305D\u304C\u5275\u4E16\u6642\u306A\u3093\u3060\uFF01\uFF01"
   animationController4: {fileID: 1746295954}
 --- !u!114 &182531527
 MonoBehaviour:
@@ -789,7 +804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0753acf8d31474598749210d1a0c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seijikaNumber: 0
   animationController5: {fileID: 401360533}
   displayManager: {fileID: 463822480}
 --- !u!1 &709923276
@@ -910,7 +924,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0753acf8d31474598749210d1a0c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seijikaNumber: 0
   animationController5: {fileID: 401360533}
   displayManager: {fileID: 463822480}
 --- !u!1 &833926889
@@ -1189,7 +1202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0753acf8d31474598749210d1a0c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seijikaNumber: 0
   animationController5: {fileID: 401360533}
   displayManager: {fileID: 463822480}
 --- !u!1 &888177296
@@ -1289,6 +1301,7 @@ MonoBehaviour:
   - "\u3053\u308C\u304B\u3089\u3082\u5FDC\u63F4\u3088\u308D\u3057\u304F\u304A\u9858\u3044\u3057\u307E\u3059\uFF01"
   isAnimationFinished: 0
   animator: {fileID: 401360532}
+  animationController5: {fileID: 0}
 --- !u!1 &911163850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2202,7 +2215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0753acf8d31474598749210d1a0c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seijikaNumber: 0
   animationController5: {fileID: 401360533}
   displayManager: {fileID: 463822480}
 --- !u!1 &1864629996
@@ -2587,7 +2599,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0753acf8d31474598749210d1a0c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seijikaNumber: 0
   animationController5: {fileID: 401360533}
   displayManager: {fileID: 463822480}
 --- !u!1 &1961666496
