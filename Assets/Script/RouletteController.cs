@@ -66,12 +66,12 @@ public class RouletteController : MonoBehaviour
         else if (angle >= 120 && angle < 240)
         {
             Debug.Log("Œ‹‰ÊFÂ");
-            SceneManager.LoadScene("ƒ~ƒjƒQ[ƒ€‚Q");
+            SceneManager.LoadScene("ƒ~ƒjƒQ[ƒ€‚P");
         }
         else
         {
             Debug.Log("Œ‹‰ÊF—Î");
-            SceneManager.LoadScene("ƒ~ƒjƒQ[ƒ€‚R");
+            SceneManager.LoadScene("ƒ~ƒjƒQ[ƒ€‚P");
         }
     }
 }

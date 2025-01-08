@@ -12,6 +12,10 @@ public class ImageDisplayManager : MonoBehaviour
         // クリックされた画像のスプライトを表示Imageに設定
         displayImage.sprite = clickedImage.sprite;
 
+        // スプライト名を保存
+        PlayerPrefs.SetString("SelectedSprite", clickedImage.sprite.name);
+        PlayerPrefs.Save(); // データを保存
+
         // 表示Imageを有効にする
         displayImage.gameObject.SetActive(true);
     }
