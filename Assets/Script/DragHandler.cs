@@ -25,7 +25,11 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler
             canvas.worldCamera,
             out Vector2 localPoint);
 
-        transform.position = Input.mousePosition;
+        // 現在のマウス位置に基づいてオブジェクトの新しい位置を計算
+        Vector3 newPosition = canvas.transform.TransformPoint(localPoint);
+        newPosition.z = 1f; // z座標を固定
+
+        transform.position = newPosition;
     }
 
     // Start is called before the first frame update
