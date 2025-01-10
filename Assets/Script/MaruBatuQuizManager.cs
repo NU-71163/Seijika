@@ -10,7 +10,7 @@ public class MaruBatuQuizManager : MonoBehaviour
     public Text questionText;   // 問題文表示用
     public Text resultText;     // 結果表示用
     public int Score;
-    public static int ResultNumber;
+    public static int ResultNumber2;
 
     // 問題リスト
     private List<Question> questions = new List<Question>();
@@ -19,10 +19,11 @@ public class MaruBatuQuizManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Screen.SetResolution(1600, 900, false);
         // 問題の初期化
         LoadQuestions();
         DisplayQuestion();
-        ResultNumber = 0;
+        ResultNumber2 = 0;
     }
 
     // 問題の設定
@@ -45,8 +46,7 @@ public class MaruBatuQuizManager : MonoBehaviour
         {
             questionText.text = "クイズ終了！";
             resultText.text = "";
-            ResultNumber += Score * 2;
-            Debug.Log(ResultNumber);
+            ResultNumber2 += Score * 2;
             Invoke("LoadSceneResult", 3.0f);
         }
     }

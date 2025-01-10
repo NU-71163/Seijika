@@ -12,13 +12,14 @@ public class ResultDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(Quizs.ResultNumber != null)
+        Screen.SetResolution(1600, 900, false);
+        if (Quizs.ResultNumber1 >= 1)
         {
-            Goukei = RandomNumberGenerator.seijikaNumber * Quizs.ResultNumber;
+            Goukei = RandomNumberGenerator.seijikaNumber * Quizs.ResultNumber1;
         }
-        if(MaruBatuQuizManager.ResultNumber != null)
+        if(MaruBatuQuizManager.ResultNumber2 >= 1)
         {
-            Goukei = RandomNumberGenerator.seijikaNumber * MaruBatuQuizManager.ResultNumber;
+            Goukei = RandomNumberGenerator.seijikaNumber * MaruBatuQuizManager.ResultNumber2;
         }
     }
 
@@ -31,13 +32,13 @@ public class ResultDisplay : MonoBehaviour
             animationController6.PlayAnimation3("Saisyu");
         }
         
-        if (Quizs.ResultNumber != null)
+        if (Quizs.ResultNumber1 >= 1)
         {
-            resultText.text = RandomNumberGenerator.seijikaNumber + "点 × " + Quizs.ResultNumber + "点 = " + Goukei + "点";
+            resultText.text = RandomNumberGenerator.seijikaNumber + "点 × " + Quizs.ResultNumber1 + "点 = " + Goukei + "点";
         }
-        if (MaruBatuQuizManager.ResultNumber != null)
+        if (MaruBatuQuizManager.ResultNumber2 >= 1)
         {
-            resultText.text = RandomNumberGenerator.seijikaNumber + "点 × " + MaruBatuQuizManager.ResultNumber + "点 = " + Goukei + "点";
+            resultText.text = RandomNumberGenerator.seijikaNumber + "点 × " + MaruBatuQuizManager.ResultNumber2 + "点 = " + Goukei + "点";
         }
     }
 }

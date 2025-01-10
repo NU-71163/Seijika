@@ -17,7 +17,7 @@ public class TextDisplay1 : MonoBehaviour
 
     void Start()
     {
-
+        Screen.SetResolution(1600, 900, false);
     }
 
     void Update()

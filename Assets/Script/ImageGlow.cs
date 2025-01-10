@@ -11,6 +11,7 @@ public class ImageGlow : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     void Start()
     {
+        Screen.SetResolution(1600, 900, false);
         // Image コンポーネントを取得
         image = GetComponent<Image>();
         if (image != null)

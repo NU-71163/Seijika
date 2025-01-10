@@ -29,11 +29,12 @@ public class Quizs : MonoBehaviour
     public resultQuiz animationController1; // スクリプトへの参照
     public QuizSeikai animationController2;
     public QuizHuseikai animationController3;
-    public static int ResultNumber;
+    public static int ResultNumber1;
 
     void Start()
     {
-        ResultNumber = 0;
+        Screen.SetResolution(1600, 900, false);
+        ResultNumber1 = 0;
 
         //CSVロード
         csvFile = Resources.Load("Seijika") as TextAsset;
@@ -109,7 +110,7 @@ public class Quizs : MonoBehaviour
         }
         else if (Problem.Count == index)
         {
-            ResultNumber += correct * 2;
+            ResultNumber1 += correct * 2;
             Debug.Log("終了!!!!");
             animationController1.PlayAnimation("ResultQuizAnimation");
             Invoke("LoadSceneResult", 5.0f);
