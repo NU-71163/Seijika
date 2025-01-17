@@ -3,39 +3,58 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler
+public class DragHandler : MonoBehaviour
 {
-    private Vector3 originalPosition;
-    private Canvas canvas;
+    public static bool boxFlag;
+    private Vector3 originalPosition; // 元の位置を記憶する
 
-    // ドラッグ開始時の処理
-    public void OnBeginDrag(PointerEventData eventData)
+    void OnMouseDrag()
     {
-        originalPosition = transform.position; // 元の位置を記録
-        transform.SetAsLastSibling();
+        //ドラッグ中は吸い込んではだめ
+        boxFlag = true;
+        //以下四行はドラッグした時にオブジェクトを動かすコード
+        Vector3 thisPosition = Input.mousePosition;
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(thisPosition);
+        worldPosition.z = 0f;
+        this.transform.position = worldPosition;
     }
 
-    // ドラッグ中の処理
-    public void OnDrag(PointerEventData eventData)
+    void OnMouseUp()
     {
-        // マウスカーソルの位置に合わせて移動（Canvasの描画モードに対応）
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            canvas.transform as RectTransform,
-            Input.mousePosition,
-            canvas.worldCamera,
-            out Vector2 localPoint);
+        boxFlag = false;
 
-        // 現在のマウス位置に基づいてオブジェクトの新しい位置を計算
-        Vector3 newPosition = canvas.transform.TransformPoint(localPoint);
-        newPosition.z = 1f; // z座標を固定
+        // ドロップ先に対応するコライダーに触れていない場合は元の位置に戻す
+        if (!IsOverlappingWithDropArea())
+        {
+            this.transform.position = originalPosition;
+        }
+    }
 
-        transform.position = newPosition;
+    // ドロップ可能エリアに入っているか判定する
+    private bool IsOverlappingWithDropArea()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, 0.1f);
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.GetComponent<DropHandler>() != null)
+            {
+                return true; // ドロップエリアに触れている
+            }
+        }
+
+        return false; // ドロップエリアに触れていない
+    }
+
+    public void Return()
+    {
+        this.transform.position = originalPosition;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        canvas = GetComponentInParent<Canvas>();
+        originalPosition = this.transform.position;
     }
 
     // Update is called once per frame

@@ -259,11 +259,11 @@ MonoBehaviour:
   - "\u3042\u306E\u3001\u3069\u306A\u305F\u3067\u3059\u304B\uFF1F"
   - "\u4ECA\u306E\u65E5\u672C\u306B\u4E0D\u6E80\u306F\u7121\u3044\uFF1F"
   - "\u4E0D\u6E80......\uFF1F"
-  - "103\u4E07\u306E\u58C1\u3001\u6D88\u8CBB\u7A0E\u306E\u9AD8\u3055\u3001\u4F11\u6687\u306E\u5C11\u306A\u3055\u3001\u80B2\u5150\u8CBB\u7528\u306E\u8CA0\u62C5\u306E\u5927\u304D\u3055\u3001\u3001\u3001\u3001"
+  - "103\u4E07\u306E\u58C1\u3001\u6D88\u8CBB\u7A0E\u306E\u9AD8\u3055\u3001\u4F11\u6687\u306E\u5C11\u306A\u3055\u3001\n\u80B2\u5150\u8CBB\u7528\u306E\u8CA0\u62C5\u306E\u5927\u304D\u3055\u3001\u3001\u3001\u3001"
   - "\u50D5\u305F\u3061\u304C\u751F\u304D\u5225\u308C\u305F\u7406\u7531\u3082\u3001\u305D\u3046\u3044\u3046\u3068\u3053\u308D\u306B\u3042\u308B\u306E\u304B\u3082\u3057\u308C\u306A\u3044\u3002"
   - "\u3042\u306E\u3001\u3060\u304B\u3089\u8AB0\u3067\u3059\u304B\uFF1F"
   - "\u3067\u3082\uFF01"
-  - "\u5B9F\u306F\u305D\u308C\u3089\u3092\u50D5\u305F\u3061\u306E\u884C\u52D5\u3067\u89E3\u6C7A\u3059\u308B\u4E8B\u304C\u51FA\u6765\u308B\u3093\u3060\u3002\u4F55\u304B\u308F\u304B\u308B\uFF1F"
+  - "\u5B9F\u306F\u305D\u308C\u3089\u3092\u50D5\u305F\u3061\u306E\u884C\u52D5\u3067\u89E3\u6C7A\u3059\u308B\u4E8B\u304C\u51FA\u6765\u308B\u3093\u3060\u3002\n\u4F55\u304B\u308F\u304B\u308B\uFF1F"
   - "\u305D\u306E\u524D\u306B\u3001\u3042\u306A\u305F\u8AB0\u3067\u3059\u304B\uFF1F"
   - "\u305D\u3046\uFF01\u653F\u6CBB\u3060\u3063\uFF01\uFF01\uFF01"
   - "\u50D5\u305F\u3061\u306E\u610F\u898B\u3067\u65E5\u672C\u306F\u5909\u3048\u3089\u308C\u308B\u3093\u3060\uFF01\n\u4E00\u7DD2\u306B\u53C2\u653F\u3057\u3066\u73FE\u72B6\u3092\u5909\u3048\u3088\u3046\uFF01"
@@ -1022,7 +1022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &844187424
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1661,7 +1661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1237429508
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1740,7 +1740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1303208578
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1837,7 +1837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -714.05, y: -132.11}
+  m_AnchoredPosition: {x: -714.05005, y: -132.10999}
   m_SizeDelta: {x: -1428.11, y: -809.66}
   m_Pivot: {x: 0.49999997, y: 0.5}
 --- !u!114 &1405453010
@@ -2312,7 +2312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - 
-  - "\u53CC\u751F\u5150"
+  - "\uFF1F\uFF1F\uFF1F"
   - "\u81EA\u5206"
   - "\u53CC\u751F\u5150"
   - "\u81EA\u5206"
@@ -2362,7 +2362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -634.99994, y: -134}
+  m_AnchoredPosition: {x: -635, y: -134}
   m_SizeDelta: {x: -1270.34, y: -806.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1944474520
@@ -2420,7 +2420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1950713998
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2690,7 +2690,7 @@ GameObject:
   - component: {fileID: 1991229231}
   - component: {fileID: 1991229230}
   m_Layer: 5
-  m_Name: Image
+  m_Name: "\u53CC\u751F\u5150(image)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2712,8 +2712,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 89}
-  m_SizeDelta: {x: 700, y: 500}
+  m_AnchoredPosition: {x: 0, y: 127}
+  m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1991229230
 MonoBehaviour:
