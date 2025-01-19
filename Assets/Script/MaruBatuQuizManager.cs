@@ -29,9 +29,16 @@ public class MaruBatuQuizManager : MonoBehaviour
     // 問題の設定
     void LoadQuestions()
     {
-        questions.Add(new Question("地球は丸い？", true));
-        questions.Add(new Question("太陽は地球の周りを回っている？", false));
-        questions.Add(new Question("水は100℃で沸騰する？", true));
+        questions.Add(new Question("18歳以下に10万円の給付を行います。", true));
+        questions.Add(new Question("最低賃金を100円に引き下げます。", false));
+        questions.Add(new Question("核兵器のない世界を目指します。", true));
+        questions.Add(new Question("2050年カーボンニュートラル実現に向けて、２兆円を国民から搾取します。", false));
+        questions.Add(new Question("晩期の憲法改正を目指します", false));
+        questions.Add(new Question("刑事責任を問われた議員の歳費支給停止を行います。", true));
+        questions.Add(new Question("LGBTの差別加速や同性婚を認めないようにします。", false));
+        questions.Add(new Question("大企業や富裕層に応分の負担を求める税制へと改革していきます。", true));
+        questions.Add(new Question("ジェンダー平等を実現します。", true));
+        questions.Add(new Question("年収1000万円程度未満を対象に、給料10%減を行います。", false));
     }
 
     // 現在の問題を表示
@@ -44,7 +51,7 @@ public class MaruBatuQuizManager : MonoBehaviour
         }
         else
         {
-            questionText.text = "クイズ終了！";
+            questionText.text = "投票終了！";
             resultText.text = "";
             ResultNumber2 += Score * 2;
             Invoke("LoadSceneResult", 3.0f);
