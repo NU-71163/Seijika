@@ -61,7 +61,7 @@ public class DropHandler : MonoBehaviour
 
     IEnumerator ReturnAfterDelay()
     {
-        yield return new WaitForSeconds(1f); // 2•b‘Ò‹@
+        yield return new WaitForSeconds(1f); // 1•b‘Ò‹@
 
         foreach (DragHandler dragHandler in dragHandlers)
         {
