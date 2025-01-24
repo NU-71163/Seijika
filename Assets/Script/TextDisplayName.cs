@@ -6,24 +6,30 @@ using UnityEngine.UI;
 public class TextDisplayName : MonoBehaviour
 {
     public string[] texts;
-    int textNumber;
-    public AudioClip sound1;
-    AudioSource audioSource;
-
+    public AudioClip[] audioClips; // 再生するオーディオの配列
+    AudioSource audioSource; // AudioSource コンポーネント
+    int textNumber = 0; // 現在のテキスト番号
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.PlayOneShot(sound1);
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     void Update()
     {
         this.GetComponent<Text>().text = texts[textNumber];
+
         if (textNumber != texts.Length - 1)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                textNumber = textNumber + 1;
+                textNumber++;
+
+                // 音声を再生（配列の範囲内で）
+                if (textNumber < audioClips.Length)
+                {
+                    audioSource.clip = audioClips[textNumber];
+                    audioSource.Play();
+                }
             }
         }
     }

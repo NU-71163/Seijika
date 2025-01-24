@@ -25,7 +25,7 @@ public class TextDisplay1 : MonoBehaviour
         if (textStop == false) //テキストを表示させるif文
         {
             displayTextSpeed++;
-            if (displayTextSpeed % 20 == 0)//20回に一回プログラムを実行するif文
+            if (displayTextSpeed % 5 == 0)//20回に一回プログラムを実行するif文
             {
 
                 if (textCharNumber != texts[textNumber].Length)//もしtext[textNumber]の文字列の文字が最後の文字じゃなければ
