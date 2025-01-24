@@ -37,7 +37,7 @@ public class ScoreHandler : MonoBehaviour
         string message = messages[Random.Range(0, messages.Length)];
         resultText.text = message;
         Debug.Log($"表示されるメッセージ: {message}");
-        StartCoroutine(ChangeSceneAfterDelay(100f));
+        StartCoroutine(ChangeSceneAfterDelay(15f));
     }
 
     IEnumerator ChangeSceneAfterDelay(float delay)
