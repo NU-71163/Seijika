@@ -14,6 +14,9 @@ public class RouletteController : MonoBehaviour
 
     public AudioClip sound1;
     AudioSource audioSource;
+    public Animator animatorQuiz;
+    public Animator animatorMarubatu;
+    public Animator animatorBira;
 
     // Start is called before the first frame update
     void Start()
@@ -61,30 +64,25 @@ public class RouletteController : MonoBehaviour
     {
         // ÅI“I‚ÈŠp“x‚ðŽæ“¾ (0`360“x)
         float angle = rouletteImage.eulerAngles.z;
-        string nextScene = "";
 
         // 120“x‚²‚Æ‚É•ª‚¯‚ÄŒ‹‰Ê”»’è (3•ªŠ„)
         if (angle >= 0 && angle < 120)
         {
             Debug.Log("Œ‹‰ÊFÔ");
-            nextScene = "ƒ~ƒjƒQ[ƒ€‚P";
+            animatorQuiz.SetTrigger("seiziquiz");
+            //SceneManager.LoadScene("ƒ~ƒjƒQ[ƒ€‚P");
         }
         else if (angle >= 120 && angle < 240)
         {
             Debug.Log("Œ‹‰ÊFÂ");
-            nextScene = "ƒ~ƒjƒQ[ƒ€‚Q";
+            animatorQuiz.SetTrigger("touhyou");
+            //SceneManager.LoadScene("ƒ~ƒjƒQ[ƒ€‚Q");
         }
         else
         {
             Debug.Log("Œ‹‰ÊF—Î");
-            nextScene = "ƒ~ƒjƒQ[ƒ€‚R";
+            animatorQuiz.SetTrigger("bira");
+            //SceneManager.LoadScene("ƒ~ƒjƒQ[ƒ€‚R");
         }
-        StartCoroutine(ChangeSceneAfterDelay(nextScene));
-    }
-
-    IEnumerator ChangeSceneAfterDelay(string sceneName)
-    {
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(sceneName);
     }
 }
