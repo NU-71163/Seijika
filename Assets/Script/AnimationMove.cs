@@ -7,6 +7,9 @@ public class AnimationMove : MonoBehaviour
 {
     public Animator animator1; // Animatorコンポーネントへの参照
     public Animator animator2;
+    public Animator animatorQuiz;
+    public Animator animatorMarubatu;
+    public Animator animatorBIra;
     public TextDisplay2 display2;
 
     // アニメーション再生関数
@@ -20,6 +23,21 @@ public class AnimationMove : MonoBehaviour
     {
         animator2.Play(animationName);
         StartCoroutine(FixPosition2());
+    }
+
+    public void PlayAnimationQuiz(string animationName)
+    {
+        animatorQuiz.Play(animationName); // 指定されたアニメーションを再生
+    }
+
+    public void PlayAnimationMarubatu(string animationName)
+    {
+        animatorMarubatu.Play(animationName); // 指定されたアニメーションを再生
+    }
+
+    public void PlayAnimationBIra(string animationName)
+    {
+        animatorBIra.Play(animationName); // 指定されたアニメーションを再生
     }
 
     void EndAnimation()

@@ -12,17 +12,10 @@ public class RouletteController : MonoBehaviour
     private float deceleration;   // å∏ë¨ó¶
     private float currentSpeed = 0f;   // åªç›ÇÃâÒì]ë¨ìx
 
-    public AudioClip sound1;
-    AudioSource audioSource;
-    public Animator animatorQuiz;
-    public Animator animatorMarubatu;
-    public Animator animatorBira;
-
     // Start is called before the first frame update
     void Start()
     {
         Screen.SetResolution(1600, 900, false);
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,7 +33,6 @@ public class RouletteController : MonoBehaviour
                 currentSpeed = 0;
                 isSpinning = false;
                 DetermineResult(); // åãâ îªíË
-                audioSource.PlayOneShot(sound1);
             }
 
             // ÉãÅ[ÉåÉbÉgÇâÒì]Ç≥ÇπÇÈ
@@ -69,20 +61,17 @@ public class RouletteController : MonoBehaviour
         if (angle >= 0 && angle < 120)
         {
             Debug.Log("åãâ ÅFê‘");
-            animatorQuiz.SetTrigger("seiziquiz");
-            //SceneManager.LoadScene("É~ÉjÉQÅ[ÉÄÇP");
+            SceneManager.LoadScene("É~ÉjÉQÅ[ÉÄÇP");
         }
         else if (angle >= 120 && angle < 240)
         {
             Debug.Log("åãâ ÅFê¬");
-            animatorQuiz.SetTrigger("touhyou");
-            //SceneManager.LoadScene("É~ÉjÉQÅ[ÉÄÇQ");
+            SceneManager.LoadScene("É~ÉjÉQÅ[ÉÄÇQ");
         }
         else
         {
             Debug.Log("åãâ ÅFóŒ");
-            animatorQuiz.SetTrigger("bira");
-            //SceneManager.LoadScene("É~ÉjÉQÅ[ÉÄÇR");
+            SceneManager.LoadScene("É~ÉjÉQÅ[ÉÄÇR");
         }
     }
 }
