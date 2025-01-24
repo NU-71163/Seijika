@@ -12,10 +12,14 @@ public class RouletteController : MonoBehaviour
     private float deceleration;   // 減速率
     private float currentSpeed = 0f;   // 現在の回転速度
 
+    public AudioClip sound1;
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         Screen.SetResolution(1600, 900, false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,6 +37,7 @@ public class RouletteController : MonoBehaviour
                 currentSpeed = 0;
                 isSpinning = false;
                 DetermineResult(); // 結果判定
+                audioSource.PlayOneShot(sound1);
             }
 
             // ルーレットを回転させる
@@ -56,22 +61,30 @@ public class RouletteController : MonoBehaviour
     {
         // 最終的な角度を取得 (0～360度)
         float angle = rouletteImage.eulerAngles.z;
+        string nextScene = "";
 
         // 120度ごとに分けて結果判定 (3分割)
         if (angle >= 0 && angle < 120)
         {
             Debug.Log("結果：赤");
-            SceneManager.LoadScene("ミニゲーム１");
+            nextScene = "ミニゲーム１";
         }
         else if (angle >= 120 && angle < 240)
         {
             Debug.Log("結果：青");
-            SceneManager.LoadScene("ミニゲーム２");
+            nextScene = "ミニゲーム２";
         }
         else
         {
             Debug.Log("結果：緑");
-            SceneManager.LoadScene("ミニゲーム３");
+            nextScene = "ミニゲーム３";
         }
+        StartCoroutine(ChangeSceneAfterDelay(nextScene));
+    }
+
+    IEnumerator ChangeSceneAfterDelay(string sceneName)
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(sceneName);
     }
 }
