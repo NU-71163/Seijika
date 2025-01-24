@@ -7,10 +7,13 @@ public class TextDisplayName : MonoBehaviour
 {
     public string[] texts;
     int textNumber;
+    public AudioClip sound1;
+    AudioSource audioSource;
 
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(sound1);
     }
 
     void Update()
